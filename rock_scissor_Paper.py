@@ -4,6 +4,9 @@ def winner_msg():
 
 def loser_msg():
     print("OOPS! You lose......")
+    
+def print_choices(str,str2):
+    print(f"Computer's Choice: '{str.capitalize()}'  ||  User's Choice: '{str2.capitalize()}'")
 
 def print_winner(string1,string2):
     print(f"{string1.capitalize()} beats the {string2.capitalize()}\n")
@@ -17,6 +20,7 @@ print("\t\t☆*: .｡. o(≧▽≦)o .｡.:*☆ Welcome To 'Rock','Scissor','Pap
 user_choice = input("Enter Your Choice ('Rock','Scissor','Paper')\n-->Press 'q' to exit\n-->type 'rules' for GAME RULES:\n--> ").lower()
 while(True):
     if computer_choice == user_choice:
+        print_choices(computer_choice,user_choice)
         print("Game Tie!!")
     elif user_choice =='q':
         print("Thanks for Playing!\nexiting.......")
@@ -25,27 +29,33 @@ while(True):
         print(RULES)
     elif computer_choice =="rock":
         if user_choice =="paper":
+            print_choices(computer_choice,user_choice)
             winner_msg()
             print_winner(user_choice,computer_choice)
         elif user_choice =="scissor":
+            print_choices(computer_choice,user_choice)
             loser_msg()
             print_winner(computer_choice,user_choice)
         else:
             print("Invalid Choice!")
     elif computer_choice == "scissor":
         if user_choice =="rock":
+            print_choices(computer_choice,user_choice)
             winner_msg()
             print_winner(user_choice,computer_choice)
         elif user_choice =="paper":
+            print_choices(computer_choice,user_choice)
             loser_msg()
             print_winner(computer_choice,user_choice)
         else:
             print("Invalid Choice!")
     elif computer_choice=="paper":
         if user_choice == "rock":
+            print_choices(computer_choice,user_choice)
             loser_msg()
             print_winner(computer_choice,user_choice)
         elif user_choice == "scissor":
+            print_choices(computer_choice,user_choice)
             winner_msg()
             print_winner(user_choice,computer_choice)
         else:
